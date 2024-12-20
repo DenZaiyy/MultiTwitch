@@ -45,7 +45,7 @@ function Stream({
             <iframe
                 src={`https://player.twitch.tv/?channel=${stream.name}&parent=${
                     import.meta.env.VITE_PARENT
-                }`}
+                }&muted=true`}
                 allowFullScreen={false}
                 loading="lazy"
                 className={`border-0 ${
