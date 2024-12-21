@@ -26,10 +26,6 @@ function Stream() {
     const gridCols = Math.min(streams.length, 2); // Maximum 2 columns
     const gridRows = Math.ceil(streams.length / 2); // Adjust rows dynamically
 
-    const handleDeleteStream = (id: number) => {
-        setStreams(streams.filter((s) => s.id !== id));
-    };
-
     const handleToggleChat = (id: number) => {
         setStreams(
             streams.map((s) =>
@@ -55,9 +51,6 @@ function Stream() {
                         >
                             <Live
                                 stream={stream}
-                                handleDeleteStream={() =>
-                                    handleDeleteStream(stream.id)
-                                }
                                 handleToggleChat={() =>
                                     handleToggleChat(stream.id)
                                 }

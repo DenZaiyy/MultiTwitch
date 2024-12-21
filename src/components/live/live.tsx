@@ -3,11 +3,9 @@ import { useState } from "react";
 
 function Live({
     stream,
-    handleDeleteStream,
     handleToggleChat,
 }: {
     stream: Stream;
-    handleDeleteStream: (id: number) => void;
     handleToggleChat: (id: number) => void;
 }) {
     const [isEditing, setIsEditing] = useState(false);
@@ -33,12 +31,6 @@ function Live({
                         className="cursor-pointer hover:bg-gray-200 p-2 rounded-lg w-full transition-all duration-300"
                     >
                         Toggle Chat
-                    </button>
-                    <button
-                        onClick={() => handleDeleteStream(stream.id)}
-                        className="cursor-pointer hover:bg-gray-200 p-2 rounded-lg w-full transition-all duration-300"
-                    >
-                        Delete
                     </button>
                 </div>
             </div>
