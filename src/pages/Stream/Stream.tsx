@@ -43,7 +43,7 @@ function Stream() {
                     gridTemplateRows: `repeat(${gridRows}, 1fr)`,
                 }}
             >
-                {streams ? (
+                {streams.length > 0 ? (
                     streams.map((stream) => (
                         <div
                             key={stream.name}
@@ -59,7 +59,14 @@ function Stream() {
                     ))
                 ) : (
                     <div className="col-span-1 flex justify-center items-center">
-                        <p className="text-2xl font-bold">No streams found</p>
+                        <div className="flex flex-col items-center justify-center">
+                            <p className="text-2xl font-bold">
+                                No streams found
+                            </p>
+                            <p className="text-sm text-gray-500">
+                                You need to have at least 1 streamer in the URL.
+                            </p>
+                        </div>
                     </div>
                 )}
             </div>
